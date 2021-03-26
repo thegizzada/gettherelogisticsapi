@@ -3,7 +3,7 @@
   "info": {
     "title": "Get There Logistics API",
     "version": "1.1.7",
-    "description": "\n\nThe Get There Logistics API is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.",
+    "description": "The Get There Logistics API is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.",
     "termsOfService": "",
     "contact": {
       "name": "Get There Jamaica",
@@ -993,7 +993,7 @@
     "securitySchemes": {
       "API Key": {
         "type": "apiKey",
-        "description": "You may find your api_key in your account settings. This key never changes and should be kept private.",
+        "description": "Depending on your preferred courier service, you will need to register on their website to acquire an authentic api_key and api_secret pair. You may find your api_key in your account settings. This key never changes and should be kept private.",
         "name": "api_key",
         "in": "query",
         "x-last-modified": 1616521511409
