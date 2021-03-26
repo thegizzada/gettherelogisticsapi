@@ -1,0 +1,1029 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Get There Logistics API",
+    "version": "1.1.7",
+    "description": "\nThe Get There Logistics API is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.",
+    "termsOfService": "",
+    "contact": {
+      "name": "Get There Jamaica",
+      "url": "https://www.getthereja.com",
+      "email": "getthere@jamaker.com"
+    },
+    "x-logo": {
+      "url": "https://s3.amazonaws.com/jamaker/dev/fileFolder/Ehjih3fxE6goTuL7f/3trEgLrGKW6zPo5R6.png"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://www.getthereja.com",
+      "description": "All calls must be made using \"https\", with an accompanying api_key + api_secret hash.",
+      "x-last-modified": 1616554197103
+    }
+  ],
+  "paths": {
+    "/gtthr_v1_calculateJob": {
+      "summary": "Calculate Job - Calculate the cost of a new job which is to be dispatched.",
+      "description": "Get the cost of a job by sending the key destination points. This request returns a job_id, which will be required to submit that job.",
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/gtthr_calculateJob"
+              },
+              "examples": {
+                "example-1": {
+                  "value": {
+                    "firstName": "Christopher",
+                    "lastName": "Gayle",
+                    "phoneNumber": "8767777777",
+                    "serviceType": "Delivery",
+                    "addressFrom": {
+                      "streetAddress": "15 Ring Rd, Kingston, Jamaica",
+                      "latitude": 18.006115,
+                      "longitude": -76.745711
+                    },
+                    "addressMiddle": [
+                      {
+                        "streetAddress": "Opposite Red Hills Mall, Kingston, Jamaica",
+                        "latitude": 18.034345,
+                        "longitude": -76.811481
+                      }
+                    ],
+                    "addressTo": {
+                      "streetAddress": "Torver Cr, Portmore, Jamaica",
+                      "latitude": 17.974324,
+                      "longitude": -76.884313
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true,
+          "description": "By sending the required information, a job will enter the dispatching system and operators are contacted accordingly."
+        },
+        "tags": [
+          "Jobs"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/200"
+                },
+                "example": {
+                  "status": "success",
+                  "job_id": "oQGjrQ2JfjzmynLaE",
+                  "distance": 7,
+                  "duration": 5,
+                  "cost": 500,
+                  "currency": "JMD"
+                }
+              }
+            },
+            "description": "Operation succeeded.",
+            "x-last-modified": 1616538429127,
+            "headers": {},
+            "links": {}
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/400"
+                },
+                "example": {
+                  "status": "illegal"
+                }
+              }
+            },
+            "description": "Illegal input for operation.",
+            "x-last-modified": 1616538419046,
+            "headers": {},
+            "links": {}
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/401"
+                },
+                "example": {
+                  "status": "unauthorized"
+                }
+              }
+            },
+            "description": "Unauthorized access.",
+            "x-last-modified": 1616538446792,
+            "headers": {},
+            "links": {}
+          }
+        },
+        "operationId": "/gtthr_v1_calculateJob",
+        "summary": "Calculate Job - Calculate the cost of a new job which is to be dispatched.",
+        "description": "By sending the required information, a job will enter the dispatching system and operators are contacted accordingly.",
+        "externalDocs": {
+          "url": ""
+        }
+      },
+      "x-last-modified": 1616543121327
+    },
+    "/gtthr_v1_submitJob": {
+      "summary": "Submit Job - Submit a job into the active job queue for operators to action.",
+      "description": "Using the job_id retrieved from a successful call to /gtthr_v1_calculateJob, use this submit command to enter it into the dispatching queue so operators may be contacted accordingly.",
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/gtthr_job_id"
+              }
+            }
+          },
+          "required": true,
+          "description": "Using the job_id retrieved from a successful call to /gtthr_v1_calculateJob, use this submit command to enter it into the dispatching queue so operators may be contacted accordingly."
+        },
+        "tags": [
+          "Jobs"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/200"
+                },
+                "example": {
+                  "status": "success",
+                  "job_id": "oQGjrQ2JfjzmynLaE"
+                }
+              }
+            },
+            "description": "Operation succeeded.",
+            "x-last-modified": 1616538429127
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/400"
+                },
+                "example": {
+                  "status": "illegal"
+                }
+              }
+            },
+            "description": "Illegal input for operation.",
+            "x-last-modified": 1616538419046
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/401"
+                },
+                "example": {
+                  "status": "unauthorized"
+                }
+              }
+            },
+            "description": "Unauthorized access.",
+            "x-last-modified": 1616538446792
+          }
+        },
+        "operationId": "/gtthr_v1_submitJob",
+        "summary": "Submit Job - Submit a job into the active job queue for operators to action.",
+        "description": "Using the job_id retrieved from a successful call to /gtthr_v1_calculateJob, use this submit command to enter it into the dispatching queue so operators may be contacted accordingly.",
+        "externalDocs": {
+          "url": ""
+        }
+      },
+      "x-last-modified": 1616542883949
+    },
+    "/gtthr_v1_trackJob": {
+      "summary": "Track Job - Get the status of an existing job in the queue.",
+      "description": "Using the job_id, you may retrieve the current status of the job, which also returns the operator's current location.",
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/gtthr_job_id"
+              }
+            }
+          },
+          "required": true,
+          "description": "Using the job_id, you may retrieve the current status of the job, which also returns the operator's current location."
+        },
+        "tags": [
+          "Jobs"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/200"
+                },
+                "example": {
+                  "status": "success",
+                  "job_id": "oQGjrQ2JfjzmynLaE",
+                  "currentStatus": "On The Way",
+                  "operatorFirstname": "Christopher",
+                  "operatorLastname": "Gayle",
+                  "operatorPhonenumber": "8767777777",
+                  "operatorLocation": {
+                    "latitude": 18.034345,
+                    "longitude": -76.811481
+                  }
+                }
+              }
+            },
+            "description": "Operation succeeded.",
+            "x-last-modified": 1616538429127
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/400"
+                },
+                "example": {
+                  "status": "illegal"
+                }
+              }
+            },
+            "description": "Illegal input for operation.",
+            "x-last-modified": 1616538419046
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/401"
+                },
+                "example": {
+                  "status": "unauthorized"
+                }
+              }
+            },
+            "description": "Unauthorized access.",
+            "x-last-modified": 1616538446792
+          }
+        },
+        "operationId": "/gtthr_v1_trackJob",
+        "summary": "Track Job - Get the status of an existing job in the queue.",
+        "description": "Using the job_id, you may retrieve the current status of the job, which also returns the operator's current location.",
+        "externalDocs": {
+          "url": ""
+        }
+      },
+      "x-last-modified": 1616542916346
+    },
+    "/gtthr_v1_cancelJob": {
+      "summary": "Cancel Job - Cancel an existing job in the queue.",
+      "description": "Using the job_id, you may cancel a job which has been previously dispatched.",
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/gtthr_job_id"
+              }
+            }
+          },
+          "required": true,
+          "description": "Using the job_id, you may cancel a job which has been previously dispatched."
+        },
+        "tags": [
+          "Jobs"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/200"
+                },
+                "example": {
+                  "status": "success",
+                  "job_id": "oQGjrQ2JfjzmynLaE"
+                }
+              }
+            },
+            "description": "Operation succeeded.",
+            "x-last-modified": 1616544140021
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/400"
+                },
+                "example": {
+                  "status": "illegal"
+                }
+              }
+            },
+            "description": "Illegal input for operation.",
+            "x-last-modified": 1616538419046
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/responses/401"
+                },
+                "example": {
+                  "status": "unauthorized"
+                }
+              }
+            },
+            "description": "Unauthorized access.",
+            "x-last-modified": 1616538446792
+          }
+        },
+        "operationId": "/gtthr_v1_cancelJob",
+        "summary": "Cancel Job - Cancel an existing job in the queue.",
+        "description": "Using the job_id, you may cancel a job which has been previously dispatched.",
+        "externalDocs": {
+          "url": ""
+        }
+      },
+      "x-last-modified": 1616543314980
+    },
+    "/gtthr_v1_submitOperator": {
+      "post": {
+        "summary": "Submit Operator - Add a courier to the logistics network.",
+        "operationId": "post-gtthr_v1_submitOperator",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "minLength": 1,
+                      "description": ""
+                    }
+                  }
+                },
+                "example": {
+                  "status": "success",
+                  "job_id": "oQGjrQ2JfjzmynLaE"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "status": "success"
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Operation succeeded.",
+            "x-last-modified": 1616544140021
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "example": {
+                  "status": "illegal"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "status": "illegal"
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Illegal input for operation.",
+            "x-last-modified": 1616538419046
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "example": {
+                  "status": "unauthorized"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "status": "unauthorized"
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Unauthorized access.",
+            "x-last-modified": 1616538446792
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/gtthr_operator"
+              },
+              "examples": {
+                "example-1": {
+                  "value": {
+                    "firstName": "string",
+                    "lastName": "string",
+                    "emailAddress": "string",
+                    "phoneNumber": "string",
+                    "type": "string",
+                    "vehicle": {
+                      "licensePlateNumber": "string",
+                      "make": "string",
+                      "model": "string",
+                      "colour": "string",
+                      "bodyType": "string",
+                      "seatCount": 0,
+                      "registrationExpiryDate": "string",
+                      "fitnessExpiryDate": "string",
+                      "insuranceExpiryDate": "string"
+                    },
+                    "bankAccount": {
+                      "nameOnAccount": "string",
+                      "accountNumber": "string",
+                      "accountType": "string",
+                      "code": "string",
+                      "branchCode": "string"
+                    },
+                    "pictures": {
+                      "selfie": [
+                        "https://s3.amazonaws.com/jamaker/dev/fileFolder/Ehjih3fxE6goTuL7f/3trEgLrGKW6zPo5R6.png"
+                      ],
+                      "vehicle": [
+                        "https://s3.amazonaws.com/jamaker/dev/fileFolder/Ehjih3fxE6goTuL7f/3trEgLrGKW6zPo5R6.png"
+                      ],
+                      "driversLicense": [
+                        "https://s3.amazonaws.com/jamaker/dev/fileFolder/Ehjih3fxE6goTuL7f/3trEgLrGKW6zPo5R6.png"
+                      ],
+                      "vehicleFitness": [
+                        "https://s3.amazonaws.com/jamaker/dev/fileFolder/Ehjih3fxE6goTuL7f/3trEgLrGKW6zPo5R6.png"
+                      ],
+                      "vehicleInsurance": [
+                        "https://s3.amazonaws.com/jamaker/dev/fileFolder/Ehjih3fxE6goTuL7f/3trEgLrGKW6zPo5R6.png"
+                      ],
+                      "vehicleRegistration": [
+                        "https://s3.amazonaws.com/jamaker/dev/fileFolder/Ehjih3fxE6goTuL7f/3trEgLrGKW6zPo5R6.png"
+                      ],
+                      "vehiclePPV": [
+                        "https://s3.amazonaws.com/jamaker/dev/fileFolder/Ehjih3fxE6goTuL7f/3trEgLrGKW6zPo5R6.png"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "application/javascript": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              }
+            }
+          },
+          "description": "By sending the required information, an operator will be created allowing such a person to log into the logistics network and participate in the fulfillment operations."
+        },
+        "description": "By sending the required information, an operator will be created allowing such a person to log into the logistics network and participate in the fulfillment operations."
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IllegalInputError": {
+        "required": [
+          "message",
+          "code"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "maximum": 400,
+            "minimum": 400,
+            "type": "integer"
+          }
+        },
+        "x-last-modified": 1616529193893
+      },
+      "UnauthorizedError": {
+        "required": [
+          "message",
+          "code"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "maximum": 401,
+            "minimum": 401,
+            "type": "integer"
+          }
+        },
+        "x-last-modified": 1616529196492
+      },
+      "ServerError": {
+        "required": [
+          "message",
+          "code"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "maximum": 599,
+            "minimum": 500,
+            "type": "integer"
+          }
+        },
+        "x-last-modified": 1616529200326
+      },
+      "gtthr_calculateJob": {
+        "type": "object",
+        "example": {
+          "firstName": "Christopher",
+          "lastName": "Gayle",
+          "phoneNumber": "8767777777",
+          "serviceType": "Delivery",
+          "addressFrom": {
+            "streetAddress": "15 Ring Rd, Kingston, Jamaica",
+            "latitude": 18.006115,
+            "longitude": -76.745711
+          },
+          "addressMiddle": [
+            {
+              "streetAddress": "Opposite Red Hills Mall, Kingston, Jamaica",
+              "latitude": 18.034345,
+              "longitude": -76.811481
+            }
+          ],
+          "addressTo": {
+            "streetAddress": "Torver Cr, Portmore, Jamaica",
+            "latitude": 17.974324,
+            "longitude": -76.884313
+          }
+        },
+        "x-last-modified": 1616543948900,
+        "x-examples": {
+          "example-1": {
+            "firstName": "Christopher",
+            "lastName": "Gayle",
+            "phoneNumber": "8767777777",
+            "serviceType": "Delivery",
+            "addressFrom": {
+              "streetAddress": "15 Ring Rd, Kingston, Jamaica",
+              "latitude": 18.006115,
+              "longitude": -76.745711
+            },
+            "addressMiddle": [
+              {
+                "streetAddress": "Opposite Red Hills Mall, Kingston, Jamaica",
+                "latitude": 18.034345,
+                "longitude": -76.811481
+              }
+            ],
+            "addressTo": {
+              "streetAddress": "Torver Cr, Portmore, Jamaica",
+              "latitude": 17.974324,
+              "longitude": -76.884313
+            }
+          }
+        },
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "lastName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "phoneNumber": {
+            "type": "string",
+            "minLength": 1
+          },
+          "serviceType": {
+            "type": "string",
+            "minLength": 1
+          },
+          "addressFrom": {
+            "type": "object",
+            "required": [
+              "latitude",
+              "longitude"
+            ],
+            "minProperties": 2,
+            "properties": {
+              "streetAddress": {
+                "type": "string"
+              },
+              "latitude": {
+                "type": "number",
+                "minimum": 1
+              },
+              "longitude": {
+                "type": "number",
+                "minimum": 1
+              }
+            }
+          },
+          "addressMiddle": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "streetAddress": {
+                  "type": "string"
+                },
+                "latitude": {
+                  "type": "number",
+                  "minimum": 1
+                },
+                "longitude": {
+                  "type": "number",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "latitude",
+                "longitude"
+              ]
+            }
+          },
+          "addressTo": {
+            "type": "object",
+            "required": [
+              "latitude",
+              "longitude"
+            ],
+            "minProperties": 2,
+            "properties": {
+              "streetAddress": {
+                "type": "string"
+              },
+              "latitude": {
+                "type": "number",
+                "minimum": 1
+              },
+              "longitude": {
+                "type": "number",
+                "minimum": 1
+              }
+            }
+          }
+        },
+        "required": [
+          "firstName",
+          "lastName",
+          "phoneNumber",
+          "serviceType",
+          "addressFrom",
+          "addressTo"
+        ]
+      },
+      "gtthr_job_id": {
+        "type": "object",
+        "example": {
+          "job_id": "oQGjrQ2JfjzmynLaE"
+        },
+        "x-last-modified": 1616543983887,
+        "properties": {
+          "job_id": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "job_id"
+        ]
+      },
+      "gtthr_operator": {
+        "description": "",
+        "type": "object",
+        "x-examples": {
+          "example-1": {
+            "firstName": "string",
+            "lastName": "string",
+            "emailAddress": "string",
+            "phoneNumber": "string",
+            "type": "string",
+            "vehicle": {
+              "licensePlateNumber": "string",
+              "make": "string",
+              "model": "string",
+              "colour": "string",
+              "bodyType": "string",
+              "seatCount": 0,
+              "registrationExpiryDate": "string",
+              "fitnessExpiryDate": "string",
+              "insuranceExpiryDate": "string"
+            },
+            "bankAccount": {
+              "nameOnAccount": "string",
+              "accountNumber": "string",
+              "accountType": "string",
+              "code": "string",
+              "branchCode": "string"
+            },
+            "pictures": {
+              "selfie": [
+                "https://s3.amazonaws.com/jamaker/dev/fileFolder/Ehjih3fxE6goTuL7f/3trEgLrGKW6zPo5R6.png"
+              ],
+              "vehicle": [
+                "https://s3.amazonaws.com/jamaker/dev/fileFolder/Ehjih3fxE6goTuL7f/3trEgLrGKW6zPo5R6.png"
+              ],
+              "driversLicense": [
+                "https://s3.amazonaws.com/jamaker/dev/fileFolder/Ehjih3fxE6goTuL7f/3trEgLrGKW6zPo5R6.png"
+              ],
+              "vehicleFitness": [
+                "https://s3.amazonaws.com/jamaker/dev/fileFolder/Ehjih3fxE6goTuL7f/3trEgLrGKW6zPo5R6.png"
+              ],
+              "vehicleInsurance": [
+                "https://s3.amazonaws.com/jamaker/dev/fileFolder/Ehjih3fxE6goTuL7f/3trEgLrGKW6zPo5R6.png"
+              ],
+              "vehicleRegistration": [
+                "https://s3.amazonaws.com/jamaker/dev/fileFolder/Ehjih3fxE6goTuL7f/3trEgLrGKW6zPo5R6.png"
+              ],
+              "vehiclePPV": [
+                "https://s3.amazonaws.com/jamaker/dev/fileFolder/Ehjih3fxE6goTuL7f/3trEgLrGKW6zPo5R6.png"
+              ]
+            }
+          }
+        },
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "lastName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "emailAddress": {
+            "type": "string",
+            "minLength": 1
+          },
+          "phoneNumber": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "minLength": 1,
+            "description": "\"Car\" or \"Motorcycle\""
+          },
+          "vehicle": {
+            "type": "object",
+            "required": [
+              "licensePlateNumber",
+              "make",
+              "model",
+              "colour",
+              "bodyType",
+              "seatCount",
+              "registrationExpiryDate",
+              "fitnessExpiryDate",
+              "insuranceExpiryDate"
+            ],
+            "properties": {
+              "licensePlateNumber": {
+                "type": "string",
+                "minLength": 1
+              },
+              "make": {
+                "type": "string",
+                "minLength": 1
+              },
+              "model": {
+                "type": "string",
+                "minLength": 1
+              },
+              "colour": {
+                "type": "string",
+                "minLength": 1
+              },
+              "bodyType": {
+                "type": "string",
+                "minLength": 1
+              },
+              "seatCount": {
+                "type": "number"
+              },
+              "registrationExpiryDate": {
+                "type": "string",
+                "minLength": 1
+              },
+              "fitnessExpiryDate": {
+                "type": "string",
+                "minLength": 1
+              },
+              "insuranceExpiryDate": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "bankAccount": {
+            "type": "object",
+            "required": [
+              "nameOnAccount",
+              "accountNumber",
+              "accountType",
+              "code",
+              "branchCode"
+            ],
+            "properties": {
+              "nameOnAccount": {
+                "type": "string",
+                "minLength": 1
+              },
+              "accountNumber": {
+                "type": "string",
+                "minLength": 1
+              },
+              "accountType": {
+                "type": "string",
+                "minLength": 1
+              },
+              "code": {
+                "type": "string",
+                "minLength": 1
+              },
+              "branchCode": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "pictures": {
+            "type": "object",
+            "properties": {
+              "selfie": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "vehicle": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "driversLicense": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "vehicleFitness": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "vehicleInsurance": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "vehicleRegistration": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "vehiclePPV": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "firstName",
+          "lastName",
+          "emailAddress",
+          "phoneNumber",
+          "type",
+          "vehicle",
+          "bankAccount"
+        ]
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Operation success.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "id": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Illegal input for operation.",
+        "x-last-modified": 1616529193893
+      },
+      "401": {
+        "description": "Unauthorized access.",
+        "x-last-modified": 1616529196492
+      },
+      "404": {
+        "description": "Entity not found.",
+        "x-last-modified": 1616529194740
+      },
+      "500": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ServerError"
+            }
+          }
+        },
+        "description": "Server Error",
+        "x-last-modified": 1616529200326
+      }
+    },
+    "securitySchemes": {
+      "API Key": {
+        "type": "apiKey",
+        "description": "You may find your api_key in your account settings. This key never changes and should be kept private.",
+        "name": "api_key",
+        "in": "query",
+        "x-last-modified": 1616521511409
+      },
+      "API Secret Hash": {
+        "type": "apiKey",
+        "description": "You may find your api_secret in your account settings. This secret may be changed via your settings, but if changed your systems must communicate with the new key or lose their connection altogether.\n\nUse HMAC-SHA1 to create a hash using (api_key,api_secret) and send in the header of all requests.",
+        "name": "api_secret",
+        "in": "query",
+        "x-last-modified": 1616568112620
+      }
+    },
+    "headers": {},
+    "parameters": {}
+  },
+  "tags": [
+    {
+      "name": "Jobs",
+      "description": "Jobs are at the center of this platforms purpose. Using this API you may create jobs, check their status or otherwise cancel outstanding job orders. Please see the available commands bellow.",
+      "externalDocs": {
+        "description": "",
+        "url": ""
+      },
+      "x-last-modified": 1616544916101
+    },
+    {
+      "name": "Operators",
+      "description": "Operators are able to view jobs in the queue, accept them, automatically report accurate proximity during fulfillment and update the status of jobs they have accepted.",
+      "x-last-modified": 1616682025782
+    }
+  ],
+  "security": []
+}
