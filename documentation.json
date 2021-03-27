@@ -97,15 +97,7 @@
                       "type": "string",
                       "minLength": 1
                     }
-                  },
-                  "required": [
-                    "status",
-                    "job_id",
-                    "distance",
-                    "duration",
-                    "cost",
-                    "currency"
-                  ]
+                  }
                 },
                 "example": {
                   "status": "success",
@@ -210,11 +202,7 @@
                       "type": "string",
                       "minLength": 1
                     }
-                  },
-                  "required": [
-                    "status",
-                    "job_id"
-                  ]
+                  }
                 },
                 "example": {
                   "status": "success",
@@ -321,10 +309,6 @@
                       "type": "string",
                       "minLength": 1
                     },
-                    "job_id": {
-                      "type": "string",
-                      "minLength": 1
-                    },
                     "currentStatus": {
                       "type": "string",
                       "minLength": 1
@@ -350,22 +334,9 @@
                         "longitude": {
                           "type": "number"
                         }
-                      },
-                      "required": [
-                        "latitude",
-                        "longitude"
-                      ]
+                      }
                     }
-                  },
-                  "required": [
-                    "status",
-                    "job_id",
-                    "currentStatus",
-                    "operatorFirstname",
-                    "operatorLastname",
-                    "operatorPhonenumber",
-                    "operatorLocation"
-                  ]
+                  }
                 },
                 "example": {
                   "status": "success",
@@ -472,11 +443,7 @@
                       "type": "string",
                       "minLength": 1
                     }
-                  },
-                  "required": [
-                    "status",
-                    "job_id"
-                  ]
+                  }
                 },
                 "example": {
                   "status": "success",
