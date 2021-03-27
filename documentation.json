@@ -811,19 +811,23 @@
         "properties": {
           "firstName": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "description": "Firstname of operator."
           },
           "lastName": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "description": "Lastname of operator."
           },
           "emailAddress": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "description": "Email address of operator. Which must be accurate to ensure that the operator has proper access when they login to the logistics portal."
           },
           "phoneNumber": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "description": "Phone number of operator."
           },
           "type": {
             "type": "string",
@@ -918,42 +922,49 @@
             "properties": {
               "selfie": {
                 "type": "array",
+                "description": "Pictures of the operator themself. These images are made available to travelers / recipients when tracking a job destined to / for them.",
                 "items": {
                   "type": "string"
                 }
               },
               "vehicle": {
                 "type": "array",
+                "description": "Pictures of the operator's vehicle. These images are made available to travelers / recipients when tracking a job destined to / for them.",
                 "items": {
                   "type": "string"
                 }
               },
               "driversLicense": {
                 "type": "array",
+                "description": "Pictures of the operator's driver's license. These images are collected for security purposes, and will not be displayed to the average recipient / traveler.",
                 "items": {
                   "type": "string"
                 }
               },
               "vehicleFitness": {
                 "type": "array",
+                "description": "Pictures of the operator's vehicle fitness. These images are collected for security purposes, and will not be displayed to the average recipient / traveler.",
                 "items": {
                   "type": "string"
                 }
               },
               "vehicleInsurance": {
                 "type": "array",
+                "description": "Pictures of the operator's vehicle insurance documents. These images are collected for security purposes, and will not be displayed to the average recipient / traveler.",
                 "items": {
                   "type": "string"
                 }
               },
               "vehicleRegistration": {
                 "type": "array",
+                "description": "Pictures of the operator's vehicle registration. These images are collected for security purposes, and will not be displayed to the average recipient / traveler.",
                 "items": {
                   "type": "string"
                 }
               },
               "vehiclePPV": {
                 "type": "array",
+                "description": "Pictures of the operator's PPV license. These images are collected for security purposes, and will not be displayed to the average recipient / traveler.",
                 "items": {
                   "type": "string"
                 }
