@@ -123,8 +123,8 @@
           }
         },
         "operationId": "/gtthr_v1_calculateJob",
-        "summary": "Calculate Job - Calculate the cost of a new job which is to be dispatched.",
-        "description": "By sending the required information, a job will enter the dispatching system and operators are contacted accordingly.",
+        "summary": "Calculate Job (/gtthr_v1_calculateJob)",
+        "description": "Calculate the cost of a new job which is to be dispatched",
         "externalDocs": {
           "url": ""
         }
@@ -195,8 +195,8 @@
           }
         },
         "operationId": "/gtthr_v1_submitJob",
-        "summary": "Submit Job - Submit a job into the active job queue for operators to action.",
-        "description": "Using the job_id retrieved from a successful call to /gtthr_v1_calculateJob, use this submit command to enter it into the dispatching queue so operators may be contacted accordingly.",
+        "summary": "Submit Job (/gtthr_v1_submitJob)",
+        "description": "Submit a job into the active job queue for operators to action.",
         "externalDocs": {
           "url": ""
         }
@@ -275,8 +275,8 @@
           }
         },
         "operationId": "/gtthr_v1_trackJob",
-        "summary": "Track Job - Get the status of an existing job in the queue.",
-        "description": "Using the job_id, you may retrieve the current status of the job, which also returns the operator's current location.",
+        "summary": "Track Job (/gtthr_v1_trackJob)",
+        "description": "Get the status of an existing job in the queue.",
         "externalDocs": {
           "url": ""
         }
@@ -347,8 +347,8 @@
           }
         },
         "operationId": "/gtthr_v1_cancelJob",
-        "summary": "Cancel Job - Cancel an existing job in the queue.",
-        "description": "Using the job_id, you may cancel a job which has been previously dispatched.",
+        "summary": "Cancel Job (/gtthr_v1_cancelJob)",
+        "description": "Cancel an existing job in the queue.",
         "externalDocs": {
           "url": ""
         }
@@ -357,7 +357,7 @@
     },
     "/gtthr_v1_submitOperator": {
       "post": {
-        "summary": "Submit Operator - Add a courier to the logistics network.",
+        "summary": "Submit Operator (/gtthr_v1_submitOperator)",
         "operationId": "post-gtthr_v1_submitOperator",
         "responses": {
           "200": {
@@ -515,7 +515,7 @@
           },
           "description": "By sending the required information, an operator will be created allowing such a person to log into the logistics network and participate in the fulfillment operations."
         },
-        "description": "By sending the required information, an operator will be created allowing such a person to log into the logistics network and participate in the fulfillment operations."
+        "description": "Add a courier to the logistics network."
       }
     }
   },
@@ -993,14 +993,14 @@
     "securitySchemes": {
       "API Key": {
         "type": "apiKey",
-        "description": "Depending on your preferred courier service, you will need to register on their website to acquire an authentic api_key and api_secret pair. You may find your api_key in your account settings. This key never changes and should be kept private.",
+        "description": "Depending on your preferred courier service, you will need to register on their website to acquire an authentic api_key and api_secret pair. \n\nYou may find your api_key in your account settings. This key never changes and should be kept private.",
         "name": "api_key",
         "in": "query",
         "x-last-modified": 1616521511409
       },
       "API Secret Hash": {
         "type": "apiKey",
-        "description": "You may find your api_secret in your account settings. This secret may be changed via your settings, but if changed your systems must communicate with the new key or lose their connection altogether.\n\nUse HMAC-SHA1 to create a hash using (api_key,api_secret) and send in the header of all requests.",
+        "description": "You may find your api_secret in your account settings. This secret may be changed via your settings, but if changed your systems must communicate with the new key or lose their connection altogether.\n\nUse HMAC-SHA1 to create a hash using (api_key,api_secret) and send in the header of all your requests.",
         "name": "api_secret",
         "in": "query",
         "x-last-modified": 1616568112620
@@ -1011,8 +1011,8 @@
   },
   "tags": [
     {
-      "name": "Jobs",
-      "description": "Jobs are at the center of this platforms purpose. Using this API you may create jobs, check their status or otherwise cancel outstanding job orders. Please see the available commands bellow.",
+      "name": "Dispatching Jobs",
+      "description": "Dispatching job orders to couriers are at the center of this platforms purpose. Using this API you may create jobs, check their status or otherwise cancel outstanding job orders. Please see the available commands bellow.",
       "externalDocs": {
         "description": "",
         "url": ""
