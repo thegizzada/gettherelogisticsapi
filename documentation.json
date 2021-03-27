@@ -73,7 +73,39 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/responses/200"
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "job_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "distance": {
+                      "type": "number"
+                    },
+                    "duration": {
+                      "type": "number"
+                    },
+                    "cost": {
+                      "type": "number"
+                    },
+                    "currency": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "job_id",
+                    "distance",
+                    "duration",
+                    "cost",
+                    "currency"
+                  ]
                 },
                 "example": {
                   "status": "success",
@@ -82,6 +114,18 @@
                   "duration": 5,
                   "cost": 500,
                   "currency": "JMD"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "status": "success",
+                      "job_id": "oQGjrQ2JfjzmynLaE",
+                      "distance": 7,
+                      "duration": 5,
+                      "cost": 500,
+                      "currency": "JMD"
+                    }
+                  }
                 }
               }
             },
