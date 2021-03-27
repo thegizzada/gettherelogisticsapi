@@ -976,6 +976,7 @@
               "fitnessExpiryDate",
               "insuranceExpiryDate"
             ],
+            "description": "Details about the vehicle the operator will be utilizing as they go about fulfilling job orders. Some of this information is shown to recipients / travelers that are tracking the order.",
             "properties": {
               "licensePlateNumber": {
                 "type": "string",
@@ -1023,6 +1024,7 @@
               "code",
               "branchCode"
             ],
+            "description": "The bank account details of the operator that the platform will direct funds to once they have completed a job.",
             "properties": {
               "nameOnAccount": {
                 "type": "string",
@@ -1048,6 +1050,7 @@
           },
           "pictures": {
             "type": "object",
+            "description": "Pictures of the operator, their vehicle and associated documents required for legal operations on the road.",
             "properties": {
               "selfie": {
                 "type": "array",
