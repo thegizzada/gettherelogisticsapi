@@ -645,48 +645,15 @@
           },
           "description": ""
         },
+        "tags": [
+          "Operators"
+        ],
         "description": "Add a courier to the logistics network. By sending the required information, an operator will be created allowing such a person to log into the logistics network and participate in the fulfillment operations."
       }
     }
   },
   "components": {
     "schemas": {
-      "IllegalInputError": {
-        "required": [
-          "message",
-          "code"
-        ],
-        "type": "object",
-        "properties": {
-          "message": {
-            "type": "string"
-          },
-          "code": {
-            "maximum": 400,
-            "minimum": 400,
-            "type": "integer"
-          }
-        },
-        "x-last-modified": 1616529193893
-      },
-      "UnauthorizedError": {
-        "required": [
-          "message",
-          "code"
-        ],
-        "type": "object",
-        "properties": {
-          "message": {
-            "type": "string"
-          },
-          "code": {
-            "maximum": 401,
-            "minimum": 401,
-            "type": "integer"
-          }
-        },
-        "x-last-modified": 1616529196492
-      },
       "ServerError": {
         "required": [
           "message",
@@ -710,6 +677,7 @@
         "example": {
           "firstName": "Christopher",
           "lastName": "Gayle",
+          "emailAddress": "getthere@jamaker.com",
           "phoneNumber": "8767777777",
           "serviceType": "Delivery",
           "addressFrom": {
@@ -799,12 +767,10 @@
                 "description": "Human readable street address to be broadcasted to all available nearby couriers."
               },
               "latitude": {
-                "type": "number",
-                "minimum": 1
+                "type": "number"
               },
               "longitude": {
-                "type": "number",
-                "minimum": 1
+                "type": "number"
               }
             }
           },
@@ -819,12 +785,10 @@
                   "description": "Human readable street address to be broadcasted to all available nearby couriers."
                 },
                 "latitude": {
-                  "type": "number",
-                  "minimum": 1
+                  "type": "number"
                 },
                 "longitude": {
-                  "type": "number",
-                  "minimum": 1
+                  "type": "number"
                 }
               },
               "required": [
@@ -847,12 +811,10 @@
                 "description": "Human readable street address to be broadcasted to all available nearby couriers."
               },
               "latitude": {
-                "type": "number",
-                "minimum": 1
+                "type": "number"
               },
               "longitude": {
-                "type": "number",
-                "minimum": 1
+                "type": "number"
               }
             }
           }
