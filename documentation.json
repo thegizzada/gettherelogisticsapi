@@ -268,7 +268,7 @@
         },
         "operationId": "/gtthr_v1_submitJob",
         "summary": "Submit Job - /gtthr_v1_submitJob (Step 2)",
-        "description": "Submit a calculated job into the active job queue for operators to action. Using the job_id retrieved from a successful call to /gtthr_v1_calculateJob, use this submit command to enter it into the dispatching queue so operators may be contacted accordingly.",
+        "description": "Submit a calculated job into the active job queue for operators to action. Using the job_id retrieved from a successful call to /gtthr_v1_calculateJob, use this submit command to enter it into the dispatching queue so operators may be contacted accordingly.\n\nA payment method MUST be added in order to submit a job. The card you have saved will be charged for the trip that is being dispatched, so please ensure you have collected from your customer already.",
         "externalDocs": {
           "url": ""
         }
@@ -478,7 +478,7 @@
         },
         "operationId": "/gtthr_v1_cancelJob",
         "summary": "Cancel Job - /gtthr_v1_cancelJob",
-        "description": "Cancel an existing job in the queue. Using the job_id, you may cancel a job which has been previously dispatched.",
+        "description": "Cancel an existing job in the queue. Using the job_id, you may cancel a job which has been previously dispatched.\n\nIf this job has been submitted already, and a charge to your card made. That charge will be reversed immediately to return those funds to your account.",
         "externalDocs": {
           "url": ""
         }
