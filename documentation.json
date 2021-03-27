@@ -123,7 +123,7 @@
           }
         },
         "operationId": "/gtthr_v1_calculateJob",
-        "summary": "Calculate Job - /gtthr_v1_calculateJob",
+        "summary": "Calculate Job - /gtthr_v1_calculateJob (Step 1)",
         "description": "Calculate the cost of a new job which is to be dispatched. By sending the required information, a job will enter the dispatching system and operators are contacted accordingly.",
         "externalDocs": {
           "url": ""
@@ -195,7 +195,7 @@
           }
         },
         "operationId": "/gtthr_v1_submitJob",
-        "summary": "Submit Job - /gtthr_v1_submitJob",
+        "summary": "Submit Job - /gtthr_v1_submitJob (Step 2)",
         "description": "Submit a job into the active job queue for operators to action. Using the job_id retrieved from a successful call to /gtthr_v1_calculateJob, use this submit command to enter it into the dispatching queue so operators may be contacted accordingly.",
         "externalDocs": {
           "url": ""
@@ -275,7 +275,7 @@
           }
         },
         "operationId": "/gtthr_v1_trackJob",
-        "summary": "Track Job - /gtthr_v1_trackJob",
+        "summary": "Track Job - /gtthr_v1_trackJob (Step 3)",
         "description": "Get the status of an existing job in the queue. Using the job_id, you may retrieve the current status of the job, which also returns the operator's current location.",
         "externalDocs": {
           "url": ""
