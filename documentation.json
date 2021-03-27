@@ -159,7 +159,7 @@
         },
         "operationId": "/gtthr_v1_calculateJob",
         "summary": "Calculate Job - /gtthr_v1_calculateJob (Step 1)",
-        "description": "Calculate the cost of a new job which is to be dispatched. By sending the required information, a job will enter the dispatching system and operators are contacted accordingly.",
+        "description": "Calculate the cost of a new job which is to be dispatched. By sending the required information, a job will enter the dispatching system and operators are contacted accordingly.\n\nThis function comes at a cost as accurate routes are plotted to acquire a clear route, duration and distance. You will be charged US$3.00 for every 1000 jobs calculated. Effectively this function costs US$0.003 / calculated job.",
         "externalDocs": {
           "url": ""
         }
