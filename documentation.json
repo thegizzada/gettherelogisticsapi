@@ -37,6 +37,7 @@
                   "value": {
                     "firstName": "Christopher",
                     "lastName": "Gayle",
+                    "emailAddress": "getthere@jamaker.com",
                     "phoneNumber": "8767777777",
                     "serviceType": "Delivery",
                     "addressFrom": {
@@ -627,26 +628,27 @@
             }
           }
         },
+        "title": "",
         "properties": {
           "firstName": {
             "type": "string",
             "minLength": 1,
-            "description": "Firstname of person receiving package."
+            "description": "Firstname of person expecting operator."
           },
           "lastName": {
             "type": "string",
             "minLength": 1,
-            "description": "Lastname of person receiving package."
+            "description": "Lastname of person expecting operator."
           },
           "emailAddress": {
             "type": "string",
             "minLength": 1,
-            "description": "Email address of person receiving package."
+            "description": "Email address of person expecting operator."
           },
           "phoneNumber": {
             "type": "string",
             "minLength": 1,
-            "description": "Phone number of person receiving package."
+            "description": "Phone number of person expecting operator."
           },
           "serviceType": {
             "type": "string",
@@ -656,11 +658,11 @@
           "addressFrom": {
             "type": "object",
             "minProperties": 2,
+            "description": "Location from which the package will be collected by the courier, or person/s picked up.",
             "required": [
               "latitude",
               "longitude"
             ],
-            "description": "Location from which the package will be collected by the courier.",
             "properties": {
               "streetAddress": {
                 "type": "string",
@@ -704,11 +706,11 @@
           "addressTo": {
             "type": "object",
             "minProperties": 2,
+            "description": "Location to which the package will be delivered by the courier, or person/s dropped off.",
             "required": [
               "latitude",
               "longitude"
             ],
-            "description": "Location to which the package will be delivered by the courier.",
             "properties": {
               "streetAddress": {
                 "type": "string",
@@ -732,8 +734,7 @@
           "serviceType",
           "addressFrom",
           "addressTo"
-        ],
-        "title": ""
+        ]
       },
       "gtthr_job_id": {
         "type": "object",
