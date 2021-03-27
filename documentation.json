@@ -161,6 +161,26 @@
                   "status": "success",
                   "job_id": "oQGjrQ2JfjzmynLaE"
                 }
+              },
+              "application/xml": {
+                "schema": {
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "job_id": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "job_id"
+                  ]
+                }
               }
             },
             "description": "Operation succeeded.",
@@ -197,7 +217,7 @@
         },
         "operationId": "/gtthr_v1_submitJob",
         "summary": "Submit Job - /gtthr_v1_submitJob (Step 2)",
-        "description": "Submit a job into the active job queue for operators to action. Using the job_id retrieved from a successful call to /gtthr_v1_calculateJob, use this submit command to enter it into the dispatching queue so operators may be contacted accordingly.",
+        "description": "Submit a calculated job into the active job queue for operators to action. Using the job_id retrieved from a successful call to /gtthr_v1_calculateJob, use this submit command to enter it into the dispatching queue so operators may be contacted accordingly.",
         "externalDocs": {
           "url": ""
         }
@@ -1044,7 +1064,7 @@
   "tags": [
     {
       "name": "Jobs",
-      "description": "Dispatching job orders to couriers are at the center of this platforms purpose. Using this API you may create jobs, check their status or otherwise cancel outstanding job orders. Please see the available commands bellow.",
+      "description": "Dispatching job orders to couriers our taxi operators are at the center of this platforms purpose. Using this API you may create jobs, check their status or otherwise cancel outstanding job orders. Please see the available commands bellow.",
       "externalDocs": {
         "description": "",
         "url": ""
