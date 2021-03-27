@@ -1011,7 +1011,7 @@
   },
   "tags": [
     {
-      "name": "Dispatching Jobs",
+      "name": "Jobs",
       "description": "Dispatching job orders to couriers are at the center of this platforms purpose. Using this API you may create jobs, check their status or otherwise cancel outstanding job orders. Please see the available commands bellow.",
       "externalDocs": {
         "description": "",
