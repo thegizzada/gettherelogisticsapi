@@ -629,30 +629,35 @@
         "properties": {
           "firstName": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "description": "First name of person receiving package."
           },
           "lastName": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "description": "Last name of person receiving package."
           },
           "phoneNumber": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "description": "Phone number of person receiving package."
           },
           "serviceType": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "description": "\"Fast Food\", \"Frozen Food\", \"Grocery\", or \"Small Package\""
           },
           "addressFrom": {
             "type": "object",
+            "minProperties": 2,
             "required": [
               "latitude",
               "longitude"
             ],
-            "minProperties": 2,
             "properties": {
               "streetAddress": {
-                "type": "string"
+                "type": "string",
+                "description": "Human readable street address to be broadcasted to available nearby couriers."
               },
               "latitude": {
                 "type": "number",
@@ -670,7 +675,8 @@
               "type": "object",
               "properties": {
                 "streetAddress": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Human readable street address to be broadcasted to available nearby couriers."
                 },
                 "latitude": {
                   "type": "number",
@@ -689,14 +695,15 @@
           },
           "addressTo": {
             "type": "object",
+            "minProperties": 2,
             "required": [
               "latitude",
               "longitude"
             ],
-            "minProperties": 2,
             "properties": {
               "streetAddress": {
-                "type": "string"
+                "type": "string",
+                "description": "Human readable street address to be broadcasted to available nearby couriers."
               },
               "latitude": {
                 "type": "number",
