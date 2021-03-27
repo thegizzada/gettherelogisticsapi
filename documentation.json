@@ -76,26 +76,25 @@
                   "description": "",
                   "type": "object",
                   "properties": {
-                    "status": {
-                      "type": "string",
-                      "minLength": 1
-                    },
                     "job_id": {
                       "type": "string",
-                      "minLength": 1
+                      "description": "job_id is to be preserved in order to submit the job if cost is accepted, track it and / or cancel it."
                     },
                     "distance": {
-                      "type": "number"
+                      "type": "number",
+                      "description": "Distance of journey in km."
                     },
                     "duration": {
-                      "type": "number"
+                      "type": "number",
+                      "description": "Estimated duration of journey in minutes."
                     },
                     "cost": {
-                      "type": "number"
+                      "type": "number",
+                      "description": "Final cost of job order, which will be charged to the account's card saved in your payment methods once the /gtthr_v1_submitJob instruction is sent with matching job_id."
                     },
                     "currency": {
                       "type": "string",
-                      "minLength": 1
+                      "description": "Currency of the cost of job order."
                     }
                   }
                 },
@@ -110,7 +109,6 @@
                 "examples": {
                   "example-1": {
                     "value": {
-                      "status": "success",
                       "job_id": "oQGjrQ2JfjzmynLaE",
                       "distance": 7,
                       "duration": 5,
@@ -195,12 +193,10 @@
                   "type": "object",
                   "properties": {
                     "status": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": "string"
                     },
                     "job_id": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": "string"
                     }
                   }
                 },
@@ -305,25 +301,17 @@
                   "description": "",
                   "type": "object",
                   "properties": {
-                    "status": {
-                      "type": "string",
-                      "minLength": 1
-                    },
                     "currentStatus": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": "string"
                     },
                     "operatorFirstname": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": "string"
                     },
                     "operatorLastname": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": "string"
                     },
                     "operatorPhonenumber": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": "string"
                     },
                     "operatorLocation": {
                       "type": "object",
@@ -353,9 +341,8 @@
                 "examples": {
                   "example-1": {
                     "value": {
-                      "status": "success",
                       "job_id": "oQGjrQ2JfjzmynLaE",
-                      "currentStatus": "On The Way",
+                      "currentJobStatus": "On The Way",
                       "operatorFirstname": "Christopher",
                       "operatorLastname": "Gayle",
                       "operatorPhonenumber": "8767777777",
@@ -436,12 +423,10 @@
                   "type": "object",
                   "properties": {
                     "status": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": "string"
                     },
                     "job_id": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": "string"
                     }
                   }
                 },
