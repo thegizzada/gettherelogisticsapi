@@ -654,24 +654,6 @@
   },
   "components": {
     "schemas": {
-      "ServerError": {
-        "required": [
-          "message",
-          "code"
-        ],
-        "type": "object",
-        "properties": {
-          "message": {
-            "type": "string"
-          },
-          "code": {
-            "maximum": 599,
-            "minimum": 500,
-            "type": "integer"
-          }
-        },
-        "x-last-modified": 1616529200326
-      },
       "gtthr_calculateJob": {
         "type": "object",
         "example": {
@@ -1099,21 +1081,6 @@
       "401": {
         "description": "Unauthorized access.",
         "x-last-modified": 1616529196492
-      },
-      "404": {
-        "description": "Entity not found.",
-        "x-last-modified": 1616529194740
-      },
-      "500": {
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/ServerError"
-            }
-          }
-        },
-        "description": "Server Error",
-        "x-last-modified": 1616529200326
       }
     },
     "securitySchemes": {
