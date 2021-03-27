@@ -62,7 +62,7 @@
             }
           },
           "required": true,
-          "description": "By sending the required information, a job will enter the dispatching system and operators are contacted accordingly."
+          "description": ""
         },
         "tags": [
           "Jobs"
@@ -123,8 +123,8 @@
           }
         },
         "operationId": "/gtthr_v1_calculateJob",
-        "summary": "Calculate Job (/gtthr_v1_calculateJob)",
-        "description": "Calculate the cost of a new job which is to be dispatched",
+        "summary": "Calculate Job - /gtthr_v1_calculateJob",
+        "description": "Calculate the cost of a new job which is to be dispatched. By sending the required information, a job will enter the dispatching system and operators are contacted accordingly.",
         "externalDocs": {
           "url": ""
         }
@@ -144,7 +144,7 @@
             }
           },
           "required": true,
-          "description": "Using the job_id retrieved from a successful call to /gtthr_v1_calculateJob, use this submit command to enter it into the dispatching queue so operators may be contacted accordingly."
+          "description": ""
         },
         "tags": [
           "Jobs"
@@ -195,8 +195,8 @@
           }
         },
         "operationId": "/gtthr_v1_submitJob",
-        "summary": "Submit Job (/gtthr_v1_submitJob)",
-        "description": "Submit a job into the active job queue for operators to action.",
+        "summary": "Submit Job - /gtthr_v1_submitJob",
+        "description": "Submit a job into the active job queue for operators to action. Using the job_id retrieved from a successful call to /gtthr_v1_calculateJob, use this submit command to enter it into the dispatching queue so operators may be contacted accordingly.",
         "externalDocs": {
           "url": ""
         }
@@ -216,7 +216,7 @@
             }
           },
           "required": true,
-          "description": "Using the job_id, you may retrieve the current status of the job, which also returns the operator's current location."
+          "description": ""
         },
         "tags": [
           "Jobs"
@@ -275,8 +275,8 @@
           }
         },
         "operationId": "/gtthr_v1_trackJob",
-        "summary": "Track Job (/gtthr_v1_trackJob)",
-        "description": "Get the status of an existing job in the queue.",
+        "summary": "Track Job - /gtthr_v1_trackJob",
+        "description": "Get the status of an existing job in the queue. Using the job_id, you may retrieve the current status of the job, which also returns the operator's current location.",
         "externalDocs": {
           "url": ""
         }
@@ -296,7 +296,7 @@
             }
           },
           "required": true,
-          "description": "Using the job_id, you may cancel a job which has been previously dispatched."
+          "description": ""
         },
         "tags": [
           "Jobs"
@@ -347,8 +347,8 @@
           }
         },
         "operationId": "/gtthr_v1_cancelJob",
-        "summary": "Cancel Job (/gtthr_v1_cancelJob)",
-        "description": "Cancel an existing job in the queue.",
+        "summary": "Cancel Job - /gtthr_v1_cancelJob",
+        "description": "Cancel an existing job in the queue. Using the job_id, you may cancel a job which has been previously dispatched.",
         "externalDocs": {
           "url": ""
         }
@@ -357,7 +357,7 @@
     },
     "/gtthr_v1_submitOperator": {
       "post": {
-        "summary": "Submit Operator (/gtthr_v1_submitOperator)",
+        "summary": "Submit Operator - /gtthr_v1_submitOperator",
         "operationId": "post-gtthr_v1_submitOperator",
         "responses": {
           "200": {
@@ -513,9 +513,9 @@
               }
             }
           },
-          "description": "By sending the required information, an operator will be created allowing such a person to log into the logistics network and participate in the fulfillment operations."
+          "description": ""
         },
-        "description": "Add a courier to the logistics network."
+        "description": "Add a courier to the logistics network. By sending the required information, an operator will be created allowing such a person to log into the logistics network and participate in the fulfillment operations."
       }
     }
   },
