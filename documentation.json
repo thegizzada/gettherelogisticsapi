@@ -629,26 +629,27 @@
           }
         },
         "title": "",
+        "description": "",
         "properties": {
           "firstName": {
             "type": "string",
             "minLength": 1,
-            "description": "Firstname of person expecting operator."
+            "description": "Firstname of person expecting operator / package."
           },
           "lastName": {
             "type": "string",
             "minLength": 1,
-            "description": "Lastname of person expecting operator."
+            "description": "Lastname of person expecting operator / package."
           },
           "emailAddress": {
             "type": "string",
             "minLength": 1,
-            "description": "Email address of person expecting operator."
+            "description": "Email address of person expecting operator / package."
           },
           "phoneNumber": {
             "type": "string",
             "minLength": 1,
-            "description": "Phone number of person expecting operator."
+            "description": "Phone number of person expecting operator / package."
           },
           "serviceType": {
             "type": "string",
