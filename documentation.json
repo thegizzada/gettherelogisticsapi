@@ -654,10 +654,11 @@
               "latitude",
               "longitude"
             ],
+            "description": "Location from which the package will be collected by the courier.",
             "properties": {
               "streetAddress": {
                 "type": "string",
-                "description": "Human readable street address to be broadcasted to available nearby couriers."
+                "description": "Human readable street address to be broadcasted to all available nearby couriers."
               },
               "latitude": {
                 "type": "number",
@@ -671,12 +672,13 @@
           },
           "addressMiddle": {
             "type": "array",
+            "description": "Location/s at which the taxi / bus will stop along it's route to the final destination. (Not to be used for package delivery)",
             "items": {
               "type": "object",
               "properties": {
                 "streetAddress": {
                   "type": "string",
-                  "description": "Human readable street address to be broadcasted to available nearby couriers."
+                  "description": "Human readable street address to be broadcasted to all available nearby couriers."
                 },
                 "latitude": {
                   "type": "number",
@@ -700,10 +702,11 @@
               "latitude",
               "longitude"
             ],
+            "description": "Location to which the package will be delivered by the courier.",
             "properties": {
               "streetAddress": {
                 "type": "string",
-                "description": "Human readable street address to be broadcasted to available nearby couriers."
+                "description": "Human readable street address to be broadcasted to all available nearby couriers."
               },
               "latitude": {
                 "type": "number",
