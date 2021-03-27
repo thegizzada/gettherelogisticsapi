@@ -155,11 +155,34 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/responses/200"
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "job_id": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "job_id"
+                  ]
                 },
                 "example": {
                   "status": "success",
                   "job_id": "oQGjrQ2JfjzmynLaE"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "status": "success",
+                      "job_id": "oQGjrQ2JfjzmynLaE"
+                    }
+                  }
                 }
               },
               "application/xml": {
@@ -247,7 +270,58 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/responses/200"
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "job_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "currentStatus": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "operatorFirstname": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "operatorLastname": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "operatorPhonenumber": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "operatorLocation": {
+                      "type": "object",
+                      "properties": {
+                        "latitude": {
+                          "type": "number"
+                        },
+                        "longitude": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "latitude",
+                        "longitude"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "job_id",
+                    "currentStatus",
+                    "operatorFirstname",
+                    "operatorLastname",
+                    "operatorPhonenumber",
+                    "operatorLocation"
+                  ]
                 },
                 "example": {
                   "status": "success",
@@ -259,6 +333,22 @@
                   "operatorLocation": {
                     "latitude": 18.034345,
                     "longitude": -76.811481
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "status": "success",
+                      "job_id": "oQGjrQ2JfjzmynLaE",
+                      "currentStatus": "On The Way",
+                      "operatorFirstname": "Christopher",
+                      "operatorLastname": "Gayle",
+                      "operatorPhonenumber": "8767777777",
+                      "operatorLocation": {
+                        "latitude": 18.034345,
+                        "longitude": -76.811481
+                      }
+                    }
                   }
                 }
               }
@@ -327,11 +417,34 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/responses/200"
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "job_id": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "job_id"
+                  ]
                 },
                 "example": {
                   "status": "success",
                   "job_id": "oQGjrQ2JfjzmynLaE"
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "status": "success",
+                      "job_id": "oQGjrQ2JfjzmynLaE"
+                    }
+                  }
                 }
               }
             },
