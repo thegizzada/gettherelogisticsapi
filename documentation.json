@@ -605,6 +605,7 @@
           "example-1": {
             "firstName": "Christopher",
             "lastName": "Gayle",
+            "emailAddress": "getthere@jamaker.com",
             "phoneNumber": "8767777777",
             "serviceType": "Delivery",
             "addressFrom": {
@@ -630,12 +631,17 @@
           "firstName": {
             "type": "string",
             "minLength": 1,
-            "description": "First name of person receiving package."
+            "description": "Firstname of person receiving package."
           },
           "lastName": {
             "type": "string",
             "minLength": 1,
-            "description": "Last name of person receiving package."
+            "description": "Lastname of person receiving package."
+          },
+          "emailAddress": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Email address of person receiving package."
           },
           "phoneNumber": {
             "type": "string",
@@ -726,7 +732,8 @@
           "serviceType",
           "addressFrom",
           "addressTo"
-        ]
+        ],
+        "title": ""
       },
       "gtthr_job_id": {
         "type": "object",
