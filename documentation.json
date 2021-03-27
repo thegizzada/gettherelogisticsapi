@@ -730,6 +730,7 @@
         "required": [
           "firstName",
           "lastName",
+          "emailAddress",
           "phoneNumber",
           "serviceType",
           "addressFrom",
