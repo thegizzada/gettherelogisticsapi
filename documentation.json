@@ -748,7 +748,7 @@
           "job_id": {
             "type": "string",
             "minLength": 1,
-            "description": "The job_id returned in the initial /gtthr_v1_calculateJob step is needed here."
+            "description": "The job_id is returned in the initial /gtthr_v1_calculateJob step, save it and use it here to perform this action."
           }
         },
         "required": [
