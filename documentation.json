@@ -103,14 +103,6 @@
                     }
                   }
                 },
-                "example": {
-                  "status": "success",
-                  "job_id": "oQGjrQ2JfjzmynLaE",
-                  "distance": 7,
-                  "duration": 5,
-                  "cost": 500,
-                  "currency": "JMD"
-                },
                 "examples": {
                   "example-1": {
                     "value": {
@@ -174,10 +166,6 @@
                       "description": "The same job_id of the request is returned"
                     }
                   }
-                },
-                "example": {
-                  "status": "success",
-                  "job_id": "oQGjrQ2JfjzmynLaE"
                 },
                 "examples": {
                   "example-1": {
@@ -274,17 +262,6 @@
                     }
                   }
                 },
-                "example": {
-                  "status": "success",
-                  "job_id": "oQGjrQ2JfjzmynLaE",
-                  "currentStatus": "On The Way",
-                  "operatorFullname": "Christopher Gayle",
-                  "operatorPhonenumber": "8767777777",
-                  "operatorLocation": {
-                    "latitude": 18.034345,
-                    "longitude": -76.811481
-                  }
-                },
                 "examples": {
                   "example-1": {
                     "value": {
@@ -350,10 +327,6 @@
                     }
                   }
                 },
-                "example": {
-                  "status": "success",
-                  "job_id": "oQGjrQ2JfjzmynLaE"
-                },
                 "examples": {
                   "example-1": {
                     "value": {
@@ -395,10 +368,6 @@
                       "description": "\"success\", \"illegal\" or \"unauthorized\" is returned as a response"
                     }
                   }
-                },
-                "example": {
-                  "status": "success",
-                  "job_id": "oQGjrQ2JfjzmynLaE"
                 },
                 "examples": {
                   "example-1": {
