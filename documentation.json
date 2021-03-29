@@ -37,8 +37,7 @@
                   "value": {
                     "serviceType": "Delivery",
                     "addressFrom": {
-                      "firstName": "Christopher",
-                      "lastName": "Gayle",
+                      "fullName": "Christopher Gayle",
                       "emailAddress": "getthere@jamaker.com",
                       "phoneNumber": "8767777777",
                       "streetAddress": "15 Ring Rd, Kingston, Jamaica",
@@ -47,8 +46,7 @@
                     },
                     "addressMiddle": [
                       {
-                        "firstName": "Christopher",
-                        "lastName": "Gayle",
+                        "fullName": "Christopher Gayle",
                         "emailAddress": "getthere@jamaker.com",
                         "phoneNumber": "8767777777",
                         "streetAddress": "Opposite Red Hills Mall, Kingston, Jamaica",
@@ -57,8 +55,7 @@
                       }
                     ],
                     "addressTo": {
-                      "firstName": "Christopher",
-                      "lastName": "Gayle",
+                      "fullName": "Christopher Gayle",
                       "emailAddress": "getthere@jamaker.com",
                       "phoneNumber": "8767777777",
                       "streetAddress": "Torver Cr, Portmore, Jamaica",
@@ -733,11 +730,12 @@
             "minProperties": 2,
             "description": "Location from which the package will be collected by the courier, or person/s picked up.",
             "required": [
-              "latitude",
-              "longitude",
               "fullName",
               "emailAddress",
-              "phoneNumber"
+              "phoneNumber",
+              "streetAddress",
+              "latitude",
+              "longitude"
             ],
             "properties": {
               "fullName": {
@@ -794,11 +792,12 @@
                 }
               },
               "required": [
-                "latitude",
-                "longitude",
                 "fullName",
                 "emailAddress",
-                "phoneNumber"
+                "phoneNumber",
+                "streetAddress",
+                "latitude",
+                "longitude"
               ]
             }
           },
@@ -807,11 +806,12 @@
             "minProperties": 2,
             "description": "Location to which the package will be delivered by the courier, or person/s dropped off.",
             "required": [
-              "latitude",
-              "longitude",
               "fullName",
               "emailAddress",
-              "phoneNumber"
+              "phoneNumber",
+              "streetAddress",
+              "latitude",
+              "longitude"
             ],
             "properties": {
               "fullName": {
