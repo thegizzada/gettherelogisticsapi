@@ -309,10 +309,7 @@
                     "currentStatus": {
                       "type": "string"
                     },
-                    "operatorFirstname": {
-                      "type": "string"
-                    },
-                    "operatorLastname": {
+                    "operatorFullname": {
                       "type": "string"
                     },
                     "operatorPhonenumber": {
@@ -335,8 +332,7 @@
                   "status": "success",
                   "job_id": "oQGjrQ2JfjzmynLaE",
                   "currentStatus": "On The Way",
-                  "operatorFirstname": "Christopher",
-                  "operatorLastname": "Gayle",
+                  "operatorFullname": "Christopher Gayle",
                   "operatorPhonenumber": "8767777777",
                   "operatorLocation": {
                     "latitude": 18.034345,
@@ -348,8 +344,7 @@
                     "value": {
                       "job_id": "oQGjrQ2JfjzmynLaE",
                       "currentJobStatus": "On The Way",
-                      "operatorFirstname": "Christopher",
-                      "operatorLastname": "Gayle",
+                      "operatorFullname": "Christopher Gayle",
                       "operatorPhonenumber": "8767777777",
                       "operatorLocation": {
                         "latitude": 18.034345,
