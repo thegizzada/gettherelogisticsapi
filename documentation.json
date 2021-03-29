@@ -683,24 +683,29 @@
         "x-last-modified": 1616543948900,
         "x-examples": {
           "example-1": {
-            "firstName": "Christopher",
-            "lastName": "Gayle",
-            "emailAddress": "getthere@jamaker.com",
-            "phoneNumber": "8767777777",
             "serviceType": "Delivery",
             "addressFrom": {
+              "fullName": "Christopher Gayle",
+              "emailAddress": "getthere@jamaker.com",
+              "phoneNumber": "8767777777",
               "streetAddress": "15 Ring Rd, Kingston, Jamaica",
               "latitude": 18.006115,
               "longitude": -76.745711
             },
             "addressMiddle": [
               {
+                "fullName": "Christopher Gayle",
+                "emailAddress": "getthere@jamaker.com",
+                "phoneNumber": "8767777777",
                 "streetAddress": "Opposite Red Hills Mall, Kingston, Jamaica",
                 "latitude": 18.034345,
                 "longitude": -76.811481
               }
             ],
             "addressTo": {
+              "fullName": "Christopher Gayle",
+              "emailAddress": "getthere@jamaker.com",
+              "phoneNumber": "8767777777",
               "streetAddress": "Torver Cr, Portmore, Jamaica",
               "latitude": 17.974324,
               "longitude": -76.884313
@@ -710,26 +715,6 @@
         "title": "",
         "description": "",
         "properties": {
-          "firstName": {
-            "type": "string",
-            "minLength": 1,
-            "description": "Firstname of person expecting operator / package."
-          },
-          "lastName": {
-            "type": "string",
-            "minLength": 1,
-            "description": "Lastname of person expecting operator / package."
-          },
-          "emailAddress": {
-            "type": "string",
-            "minLength": 1,
-            "description": "Email address of person expecting operator / package."
-          },
-          "phoneNumber": {
-            "type": "string",
-            "minLength": 1,
-            "description": "Phone number of person expecting operator / package."
-          },
           "serviceType": {
             "type": "string",
             "minLength": 1,
@@ -741,9 +726,24 @@
             "description": "Location from which the package will be collected by the courier, or person/s picked up.",
             "required": [
               "latitude",
-              "longitude"
+              "longitude",
+              "fullName",
+              "emailAddress",
+              "phoneNumber"
             ],
             "properties": {
+              "fullName": {
+                "type": "string",
+                "description": "Fullname of person expecting operator / package."
+              },
+              "emailAddress": {
+                "type": "string",
+                "description": "Email address of person expecting operator / package."
+              },
+              "phoneNumber": {
+                "type": "string",
+                "description": "Phone number of person expecting operator / package."
+              },
               "streetAddress": {
                 "type": "string",
                 "description": "Human readable street address to be broadcasted to all available nearby couriers."
@@ -762,6 +762,18 @@
             "items": {
               "type": "object",
               "properties": {
+                "fullName": {
+                  "type": "string",
+                  "description": "Fullname of person expecting operator / package."
+                },
+                "emailAddress": {
+                  "type": "string",
+                  "description": "Email address of person expecting operator / package."
+                },
+                "phoneNumber": {
+                  "type": "string",
+                  "description": "Phone number of person expecting operator / package."
+                },
                 "streetAddress": {
                   "type": "string",
                   "description": "Human readable street address to be broadcasted to all available nearby couriers."
@@ -775,7 +787,10 @@
               },
               "required": [
                 "latitude",
-                "longitude"
+                "longitude",
+                "fullName",
+                "emailAddress",
+                "phoneNumber"
               ]
             }
           },
@@ -785,9 +800,24 @@
             "description": "Location to which the package will be delivered by the courier, or person/s dropped off.",
             "required": [
               "latitude",
-              "longitude"
+              "longitude",
+              "fullName",
+              "emailAddress",
+              "phoneNumber"
             ],
             "properties": {
+              "fullName": {
+                "type": "string",
+                "description": "Fullname of person expecting operator / package."
+              },
+              "emailAddress": {
+                "type": "string",
+                "description": "Email address of person expecting operator / package."
+              },
+              "phoneNumber": {
+                "type": "string",
+                "description": "Phone number of person expecting operator / package."
+              },
               "streetAddress": {
                 "type": "string",
                 "description": "Human readable street address to be broadcasted to all available nearby couriers."
@@ -802,10 +832,6 @@
           }
         },
         "required": [
-          "firstName",
-          "lastName",
-          "emailAddress",
-          "phoneNumber",
           "serviceType",
           "addressFrom",
           "addressTo"
