@@ -197,7 +197,7 @@
                   "description": "",
                   "type": "object",
                   "properties": {
-                    "status": {
+                    "response": {
                       "type": "string"
                     },
                     "job_id": {
@@ -212,7 +212,7 @@
                 "examples": {
                   "example-1": {
                     "value": {
-                      "status": "success",
+                      "response": "success",
                       "job_id": "oQGjrQ2JfjzmynLaE"
                     }
                   }
@@ -250,7 +250,8 @@
                 },
                 "example": {
                   "status": "illegal"
-                }
+                },
+                "examples": {}
               }
             },
             "description": "Illegal input for operation.",
@@ -306,17 +307,21 @@
                   "description": "",
                   "type": "object",
                   "properties": {
-                    "currentStatus": {
-                      "type": "string"
+                    "currentJobStatus": {
+                      "type": "string",
+                      "description": "The job's current status, which may be \"Pending\", \"Requested\", \"Accepted\", \"On The Way\", \"Traveling\", \"Complete\" or \"Cancelled\""
                     },
                     "operatorFullname": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "Fullname of the individual carrying out the job order."
                     },
                     "operatorPhonenumber": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "Phone number of the operator carrying out the job order."
                     },
                     "operatorLocation": {
                       "type": "object",
+                      "description": "The GPS coordinates of the operator carrying out the job order.",
                       "properties": {
                         "latitude": {
                           "type": "number"
@@ -422,7 +427,7 @@
                   "description": "",
                   "type": "object",
                   "properties": {
-                    "status": {
+                    "response": {
                       "type": "string"
                     },
                     "job_id": {
@@ -437,7 +442,7 @@
                 "examples": {
                   "example-1": {
                     "value": {
-                      "status": "success",
+                      "response": "success",
                       "job_id": "oQGjrQ2JfjzmynLaE"
                     }
                   }
@@ -497,7 +502,7 @@
                   "description": "",
                   "type": "object",
                   "properties": {
-                    "status": {
+                    "response": {
                       "type": "string",
                       "minLength": 1,
                       "description": ""
@@ -511,7 +516,7 @@
                 "examples": {
                   "example-1": {
                     "value": {
-                      "status": "success"
+                      "response": "success"
                     }
                   }
                 }
