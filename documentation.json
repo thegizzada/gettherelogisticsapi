@@ -167,7 +167,7 @@
                   "properties": {
                     "response": {
                       "type": "string",
-                      "description": "\"success\" is returned as a response"
+                      "description": "\"success\", \"illegal\" or \"unauthorized\" is returned as a response"
                     },
                     "job_id": {
                       "type": "string",
@@ -342,7 +342,7 @@
                   "properties": {
                     "response": {
                       "type": "string",
-                      "description": "\"success\" is returned as a response"
+                      "description": "\"success\", \"illegal\" or \"unauthorized\" is returned as a response"
                     },
                     "job_id": {
                       "type": "string",
@@ -392,7 +392,7 @@
                     "response": {
                       "type": "string",
                       "minLength": 1,
-                      "description": "\"success\" is returned as a response"
+                      "description": "\"success\", \"illegal\" or \"unauthorized\" is returned as a response"
                     }
                   }
                 },
