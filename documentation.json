@@ -657,24 +657,29 @@
       "gtthr_calculateJob": {
         "type": "object",
         "example": {
-          "firstName": "Christopher",
-          "lastName": "Gayle",
-          "emailAddress": "getthere@jamaker.com",
-          "phoneNumber": "8767777777",
           "serviceType": "Delivery",
           "addressFrom": {
+          "fullName": "Christopher Gayle",
+          "emailAddress": "getthere@jamaker.com",
+          "phoneNumber": "8767777777",
             "streetAddress": "15 Ring Rd, Kingston, Jamaica",
             "latitude": 18.006115,
             "longitude": -76.745711
           },
           "addressMiddle": [
             {
+          "fullName": "Christopher Gayle",
+          "emailAddress": "getthere@jamaker.com",
+          "phoneNumber": "8767777777",
               "streetAddress": "Opposite Red Hills Mall, Kingston, Jamaica",
               "latitude": 18.034345,
               "longitude": -76.811481
             }
           ],
           "addressTo": {
+          "fullName": "Christopher Gayle",
+          "emailAddress": "getthere@jamaker.com",
+          "phoneNumber": "8767777777",
             "streetAddress": "Torver Cr, Portmore, Jamaica",
             "latitude": 17.974324,
             "longitude": -76.884313
