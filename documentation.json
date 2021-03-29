@@ -478,7 +478,8 @@
                 },
                 "example": {
                   "status": "unauthorized"
-                }
+                },
+                "examples": {}
               }
             },
             "description": "Unauthorized access.",
@@ -536,7 +537,7 @@
                   "description": "",
                   "type": "object",
                   "properties": {
-                    "status": {
+                    "response": {
                       "type": "string",
                       "minLength": 1
                     }
@@ -564,7 +565,7 @@
                   "description": "",
                   "type": "object",
                   "properties": {
-                    "status": {
+                    "response": {
                       "type": "string",
                       "minLength": 1
                     }
@@ -1108,11 +1109,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "properties": {
-                "id": {
-                  "type": "string"
-                }
-              }
+              "type": "object"
             }
           }
         }
