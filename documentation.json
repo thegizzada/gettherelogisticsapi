@@ -1116,7 +1116,31 @@
       },
       "400": {
         "description": "Illegal input for operation.",
-        "x-last-modified": 1616529193893
+        "x-last-modified": 1616529193893,
+        "content": {
+          "application/json": {
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "response": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "response"
+              ]
+            },
+            "examples": {
+              "example-1": {
+                "value": {
+                  "response": "string"
+                }
+              }
+            }
+          }
+        }
       },
       "401": {
         "description": "Unauthorized access.",
