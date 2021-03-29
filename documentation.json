@@ -198,10 +198,12 @@
                   "type": "object",
                   "properties": {
                     "response": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "\"success\" is returned as a response"
                     },
                     "job_id": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The same job_id of the request is returned"
                     }
                   }
                 },
@@ -428,10 +430,12 @@
                   "type": "object",
                   "properties": {
                     "response": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "\"success\" is returned as a response"
                     },
                     "job_id": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The same job_id of the request is returned"
                     }
                   }
                 },
@@ -505,7 +509,7 @@
                     "response": {
                       "type": "string",
                       "minLength": 1,
-                      "description": ""
+                      "description": "\"success\" is returned as a response"
                     }
                   }
                 },
