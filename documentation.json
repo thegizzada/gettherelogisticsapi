@@ -128,38 +128,6 @@
             "x-last-modified": 1616538429127,
             "headers": {},
             "links": {}
-          },
-          "400": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/responses/400"
-                },
-                "example": {
-                  "status": "illegal"
-                }
-              }
-            },
-            "description": "Illegal input for operation.",
-            "x-last-modified": 1616538419046,
-            "headers": {},
-            "links": {}
-          },
-          "401": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/responses/401"
-                },
-                "example": {
-                  "status": "unauthorized"
-                }
-              }
-            },
-            "description": "Unauthorized access.",
-            "x-last-modified": 1616538446792,
-            "headers": {},
-            "links": {}
           }
         },
         "operationId": "/gtthr_v1_calculateJob",
@@ -243,35 +211,6 @@
             },
             "description": "Operation succeeded.",
             "x-last-modified": 1616538429127
-          },
-          "400": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/responses/400"
-                },
-                "example": {
-                  "status": "illegal"
-                },
-                "examples": {}
-              }
-            },
-            "description": "Illegal input for operation.",
-            "x-last-modified": 1616538419046
-          },
-          "401": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/responses/401"
-                },
-                "example": {
-                  "status": "unauthorized"
-                }
-              }
-            },
-            "description": "Unauthorized access.",
-            "x-last-modified": 1616538446792
           }
         },
         "operationId": "/gtthr_v1_submitJob",
@@ -364,34 +303,6 @@
             },
             "description": "Operation succeeded.",
             "x-last-modified": 1616538429127
-          },
-          "400": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/responses/400"
-                },
-                "example": {
-                  "status": "illegal"
-                }
-              }
-            },
-            "description": "Illegal input for operation.",
-            "x-last-modified": 1616538419046
-          },
-          "401": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/responses/401"
-                },
-                "example": {
-                  "status": "unauthorized"
-                }
-              }
-            },
-            "description": "Unauthorized access.",
-            "x-last-modified": 1616538446792
           }
         },
         "operationId": "/gtthr_v1_trackJob",
@@ -455,35 +366,6 @@
             },
             "description": "Operation succeeded.",
             "x-last-modified": 1616544140021
-          },
-          "400": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/responses/400"
-                },
-                "example": {
-                  "status": "illegal"
-                }
-              }
-            },
-            "description": "Illegal input for operation.",
-            "x-last-modified": 1616538419046
-          },
-          "401": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/responses/401"
-                },
-                "example": {
-                  "status": "unauthorized"
-                },
-                "examples": {}
-              }
-            },
-            "description": "Unauthorized access.",
-            "x-last-modified": 1616538446792
           }
         },
         "operationId": "/gtthr_v1_cancelJob",
@@ -529,62 +411,6 @@
             },
             "description": "Operation succeeded.",
             "x-last-modified": 1616544140021
-          },
-          "400": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "description": "",
-                  "type": "object",
-                  "properties": {
-                    "response": {
-                      "type": "string",
-                      "minLength": 1
-                    }
-                  }
-                },
-                "example": {
-                  "status": "illegal"
-                },
-                "examples": {
-                  "example-1": {
-                    "value": {
-                      "status": "illegal"
-                    }
-                  }
-                }
-              }
-            },
-            "description": "Illegal input for operation.",
-            "x-last-modified": 1616538419046
-          },
-          "401": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "description": "",
-                  "type": "object",
-                  "properties": {
-                    "response": {
-                      "type": "string",
-                      "minLength": 1
-                    }
-                  }
-                },
-                "example": {
-                  "status": "unauthorized"
-                },
-                "examples": {
-                  "example-1": {
-                    "value": {
-                      "status": "unauthorized"
-                    }
-                  }
-                }
-              }
-            },
-            "description": "Unauthorized access.",
-            "x-last-modified": 1616538446792
           }
         },
         "requestBody": {
@@ -1113,38 +939,6 @@
             }
           }
         }
-      },
-      "400": {
-        "description": "Illegal input for operation.",
-        "x-last-modified": 1616529193893,
-        "content": {
-          "application/json": {
-            "schema": {
-              "description": "",
-              "type": "object",
-              "properties": {
-                "response": {
-                  "type": "string",
-                  "minLength": 1
-                }
-              },
-              "required": [
-                "response"
-              ]
-            },
-            "examples": {
-              "example-1": {
-                "value": {
-                  "response": "string"
-                }
-              }
-            }
-          }
-        }
-      },
-      "401": {
-        "description": "Unauthorized access.",
-        "x-last-modified": 1616529196492
       }
     },
     "securitySchemes": {
