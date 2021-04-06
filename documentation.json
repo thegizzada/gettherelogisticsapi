@@ -534,7 +534,6 @@
           },
           "description": {
             "type": "string",
-            "minLength": 1,
             "description": "Description of the package being delivered."
           },
           "addressFrom": {
@@ -544,7 +543,6 @@
             "required": [
               "fullName",
               "emailAddress",
-              "phoneNumber",
               "streetAddress",
               "latitude",
               "longitude"
@@ -604,9 +602,6 @@
                 }
               },
               "required": [
-                "fullName",
-                "emailAddress",
-                "phoneNumber",
                 "streetAddress",
                 "latitude",
                 "longitude"
