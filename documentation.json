@@ -2,7 +2,7 @@
   "openapi": "3.0.2",
   "info": {
     "title": "Get There Logistics API",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "The Get There Logistics API is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.",
     "termsOfService": "",
     "contact": {
@@ -36,6 +36,7 @@
                 "example-1": {
                   "value": {
                     "serviceType": "Delivery",
+                    "description": "Description of the package being delivered.",
                     "addressFrom": {
                       "fullName": "Christopher Gayle",
                       "emailAddress": "getthere@jamaker.com",
@@ -494,6 +495,7 @@
         "x-examples": {
           "example-1": {
             "serviceType": "Delivery",
+            "description": "Description of the package being delivered.",
             "addressFrom": {
               "fullName": "Christopher Gayle",
               "emailAddress": "getthere@jamaker.com",
@@ -529,6 +531,11 @@
             "type": "string",
             "minLength": 1,
             "description": "\"Fast Food\", \"Frozen Food\", \"Grocery\", or \"Small Package\""
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Description of the package being delivered."
           },
           "addressFrom": {
             "type": "object",
