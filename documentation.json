@@ -1,9 +1,9 @@
 {
   "openapi": "3.0.2",
   "info": {
-    "title": "Get There Logistics API",
+    "title": "Logistics API",
     "version": "1.2.1",
-    "description": "The Get There Logistics API is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.",
+    "description": "The Logistics API is organized around REST. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.",
     "termsOfService": "",
     "contact": {
       "name": "Get There Jamaica",
